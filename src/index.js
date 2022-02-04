@@ -10,12 +10,27 @@ class Menu extends React.Component {
     render() {
       return (
         <div id='menu'>
-            <h1>Div del Menu</h1>
+            <ul>
+              <li>
+              Elemento1
+              <ol>
+                <li>Elemento 1.1</li>
+              </ol>
+              </li>
+              <li>Elemento2</li>
+              <li>
+                Elemento3
+                <ol>
+                  <li>Elemento 3.1</li>
+                  <li>Elemento 3.2</li>
+                </ol>
+              </li>
+            </ul>
         </div>
       );
     }
 }
-  
+
 class Formulario extends React.Component {
     constructor(){
         super()
@@ -29,7 +44,6 @@ class Formulario extends React.Component {
             listaResultado.style.display="block"
         }
     }
-  
     render() {
       return (
         <div id='formulario'>
@@ -69,7 +83,7 @@ class Campos extends React.Component {
                     <input type="text" placeholder="DNI"/>
                 </label>
             </div>
-            
+
         );
     }
 }
@@ -98,9 +112,9 @@ class Pagina extends React.Component {
       );
     }
 }
-  
+
   // ========================================
-  
+
 ReactDOM.render(
     <Pagina />,
     document.getElementById('root')
