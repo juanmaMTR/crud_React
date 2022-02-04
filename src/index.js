@@ -1,3 +1,4 @@
+import react from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -19,30 +20,22 @@ class Formulario extends React.Component {
     constructor(){
         super()
     }
-    /*handleClick(i){
-        const newSquares=this.state.squares.slice()
-        newSquares[i]=this.state.turnoX ? 'X':'O'
-        if(this.comprobarGanador(newSquares)){
-            console.log('Hay Ganador!!!!');
+    handleClick(checked){
+        console.log('entra');
+        if(checked==true){
+            let formulario=document.getElementById('formulario')
+            formulario.style.display="none"
+            let listaResultado=document.getElementById('listaResultado')
+            listaResultado.style.display="block"
         }
-        this.setState({
-            squares:newSquares,
-            turnoX: !this.state.turnoX,
-        })
-        //console.log(i); //Muestra la posición que se pulsa
-    }*/
-    /*renderSquare(i) {
-      return <Square value={this.state.squares[i]} 
-                onClick={()=>this.handleClick(i)}
-            />;
-    }*/
+    }
   
     render() {
       return (
         <div id='formulario'>
             <form>
                 <Campos />
-                <input type="submit" value="Enviar" />
+                <input type="button" value="Enviar" onClick={()=>this.handleClick(true)}/>
             </form>
         </div>
       );
@@ -81,12 +74,26 @@ class Campos extends React.Component {
     }
 }
 
+class ListaResultado extends React.Component{
+    constructor(){
+        super()
+    }
+    render(){
+        return(
+            <div id='listaResultado'>
+                <h1>Soy listaResultado</h1>
+            </div>
+        )
+    }
+}
+
 class Pagina extends React.Component {
     render() {
       return (
         <div className="pagina">
           <Menu />
           <Formulario />
+          <ListaResultado />
         </div>
       );
     }
