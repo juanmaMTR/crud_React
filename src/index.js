@@ -11,23 +11,27 @@ class Menu extends React.Component {
       return (
         <div id='menu'>
             <ul>
-              <li>
-              Elemento1
+              <Elemento />
+              <Elemento />
+              <Elemento />
               <ol>
-                <li>Elemento 1.1</li>
+                <Elemento />
+                <Elemento />
               </ol>
-              </li>
-              <li>Elemento2</li>
-              <li>
-                Elemento3
-                <ol>
-                  <li>Elemento 3.1</li>
-                  <li>Elemento 3.2</li>
-                </ol>
-              </li>
             </ul>
         </div>
       );
+    }
+}
+
+class Elemento extends React.Component{
+    constructor(){
+        super()
+    }
+    render(){
+        return(
+            <li>Elemento</li>
+        )
     }
 }
 
@@ -36,7 +40,6 @@ class Formulario extends React.Component {
         super()
     }
     handleClick(checked){
-        console.log('entra');
         if(checked==true){
             let formulario=document.getElementById('formulario')
             formulario.style.display="none"
@@ -95,7 +98,26 @@ class ListaResultado extends React.Component{
     render(){
         return(
             <div id='listaResultado'>
-                <h1>Soy listaResultado</h1>
+                <Resultados />
+                <Resultados />
+                <Resultados />
+            </div>
+        )
+    }
+    aleatorio(){
+        console.log('entraaaa');
+    }
+}
+
+class Resultados extends React.Component{
+    constructor(){
+        super()
+    }
+    render(){
+        return(
+            <div id='resultados'>
+                <h1>Titulo</h1>
+                <p>Descripción</p>
             </div>
         )
     }
